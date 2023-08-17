@@ -1,0 +1,105 @@
+/*
+    PC: >= 1024px
+    Tablet: >=740px && <1024px;
+    Mobile: <740px
+*/
+/* Tại max-width lấy dấu bằng mà nếu max-width: 740px thì nếu 
+trường hợp tablet có width =740px thì nó sẽ áp dụng cho mobile*/
+@media (max-width: 739px){
+    #nav>li{
+        display: block;
+        background-color: #000;
+        border: none;
+        z-index: 2;
+    }
+    #nav >li:first-child{
+        display: inline-block;
+    }
+    .search{
+        display: none;
+   }
+    #nav{
+        display: block;
+   }
+   /*Khi muốn 1 thẻ nằm đè lên thẻ khác thì dùng position absolute*/
+   .menu {
+    position: absolute;
+    top: 0;
+    color: #fff;
+    right: 0;
+    display: hidden;
+    z-index: 3;
+    /*Bởi vì thuôc tính của menu là absolute mà thẻ cha của nó là header
+    có position là fixed. Ngoài ra còn có thẻ li có thuộc tính z-index=2
+    và header có z-index=1 nên cần đặt z-index cao hơn giá trị này để
+    có thể hiển thị mà nhìn thấy được.*/
+   }
+    #nav li a{
+        padding:0 24px;
+        line-height: 46.5px;
+        display: block;
+        text-decoration: none;
+        text-align: left;
+    }
+    #nav .subnav {
+        position: initial;
+        background-color: #000;
+    }
+    #nav .subnav a{
+        color: #fff;
+        padding: 5px 34px;
+    }
+    #nav li:hover .subnav{
+        display: inline-block;
+        min-width: 140px;
+        background-color: #000;
+    }
+   /* #nav li:hover .subnav{
+        display: none;
+    }*/
+
+
+    .ticket-place .ticket-buy{
+        width: 96%;
+    }
+    .member .img-member{
+        display:block;
+        width: 100%;
+    }
+    .ticket-place .img-place{
+        display:block;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    .contact .contact-info{
+        display:block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .contact .contact-form{
+        display:block;
+        width: 100%;
+        padding-left: 6px;
+    }
+    .contact .contact-name{
+        width: 98%;
+        margin-bottom:12px;
+    }
+    .contact .contact-email{
+        width: 98%;
+    }
+    .contact-submit {
+        width: 102%;
+        
+    }
+    .map-section{
+        padding-top: 100px;
+    }
+}
+/*Này áp dụng cho cả tablet và PC*/
+@media (min-width: 740px) {
+    .menu {
+        display: none;
+    }
+
+}

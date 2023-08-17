@@ -1,0 +1,530 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing : border-box;
+}
+html {
+    scroll-behavior: smooth;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+}
+
+/*Common*/
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.col {
+    float: left ;  
+}
+.col-full{
+    width: 100%;
+}
+.col-half {
+    width: 50%;
+}
+.col-third {
+    width: calc(100%/3);
+}
+#header {
+    background-color: #000;
+    width:100%;
+    height:46.5px;
+    position: fixed;
+    top:0;
+    right: 0;
+    left:0;
+    z-index: 1;
+}
+#nav{
+    display: inline-block;
+}
+#nav , .subnav{
+    list-style-type: none;
+}
+
+#nav>li {
+    display: inline-block;
+    position: relative;
+}
+#nav .subnav {
+    display: none;
+    position: absolute;
+    top:46.5px;
+    right:0;
+    left:0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#nav .subnav a{
+    color: #000;
+    display: inline-block;
+    padding:0 12px;
+    line-height: 38px;
+    z-index: 5;
+}
+
+/*#nav .subnav>li:hover>a {
+    background-color: #c0b2b2;
+    display: block;
+}*/
+#nav .subnav>li:hover>a {
+    color: #000;
+    display: block;
+    background-color: #c0b2b2;
+}
+#nav > li > a {
+    color: #fff;
+    text-align: center;
+    padding:0 24px;
+    text-transform: uppercase;
+}
+#header .search{
+    float: right;
+    color:white;
+    line-height: 46.5px;
+    padding: 0 16px;
+}
+#header .menu{
+    float: right;
+    color:white;
+    line-height: 46.5px;
+    padding: 0 16px;
+}
+#nav li a{
+    padding:0 24px;
+    line-height: 46.5px;
+    display: inline-block;
+    text-decoration: none;
+}
+#nav>li:hover>a {
+    background-color: #c0b2b2;
+    color: #000;
+}
+#nav li:hover .subnav{
+    display: inline-block;
+    min-width: 140px;
+    background-color: #fff;
+}
+
+#header .ti-angle-down {
+    font-size:12px;
+}
+#header .ti-menu-alt:hover {
+    background-color: #ccc;
+    cursor: pointer;
+    padding: 15px 22px;
+    margin-right: -16px;
+    color: #000;
+}
+#header .ti-search:hover {
+    background-color: rgb(244,67,54);
+    cursor: pointer;
+    padding: 15px;
+    margin-right: -16px;
+}
+#slider {
+    background: url('/assets/img/la.jpg') top center /cover no-repeat;
+    padding-top: 50%;
+    width: 100%;
+    margin-top: 46.5px;
+    position: relative;
+}
+
+#slider .text-content {
+    position: absolute;
+    width:100%;
+    text-align: center;
+    bottom: 46px;
+    color: white;
+}
+#slider .text-heading {
+    margin-bottom: 10px;
+    display: inline-block;
+    min-width: 200px;
+    line-height: 40px;
+    /*Dùng để hiển thị chữ khi mà chữ này bị cho vào background cùng màu 
+    nên không thấy được*/
+    text-shadow: 0 0 1px #000;
+}
+#slider .text-description{
+    /*Dùng để hiển thị chữ khi mà chữ này bị cho vào background cùng màu 
+    nên không thấy được*/
+    text-shadow: 0 0 1px #000;
+}
+#content {
+   width: 100%;
+    
+}
+#content#band{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#content .content-section {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+    /* margin-top:100px;
+    Nếu như ấn vào thanh menu của header
+    mà nó bị ẩn đi chữ tour hay the band hay 
+    contact thì dùng padding để nó hiển thị
+    còn margin thì nó sẽ bị ẩn đi mấy chữ này*/
+    text-align: center;
+    /* Chú ý khoảng cách giữa dấu -*/
+    max-width: calc(100% - 32px);
+}
+#content .section-heading {
+    font-size: 32px;
+    letter-spacing: 4px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+#content .section-sub-heading{
+    font-style: italic;
+    opacity: 0.6;
+    margin-bottom: 15px;
+}
+#content .about-content{
+    text-align: justify;
+    line-height: 1.4;
+}
+#content .member{
+   overflow: hidden;
+   padding-bottom: 100px;
+}
+#content .img-member {
+   /* width: calc(100%/3);
+   float: left;*/ 
+    margin-top: 40px;
+        
+}
+#content .img {
+    border-radius: 5px;
+    width: 160px;
+    margin: 20px 12px;
+}
+.tour-section {
+    background-color: #000;
+    width: 100%;
+    color: #fff;
+    padding-bottom: 150px;
+}
+.ticket-list {
+    background-color: #fff;
+    text-align: left;
+    color:#000;
+    margin: 12px 0px;
+   
+}
+.ticket-time li{
+    list-style: none;
+    line-height: 46.5px;
+    padding: 0 20px;
+    border-bottom: #c3b6b6 solid 1px;
+    color: #757575;
+}
+.state {
+    margin-left: 30px;
+    background-color:#f44336;
+    padding: 4px 4px;
+    color:#fff;
+}
+/* Ticket-place*/
+.ticket-time .quantity {
+    float:right;
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin-top: 11.25px;
+}
+.ticket-place {
+    width: calc(100% +16px);
+   /* chỗ này chạy thử trên dev nhận ra thấy di chuyển từ 800px
+   đến 816 px thì margin-left và margin-right mới có hiệu lực. Vì
+   ticket-place có độ dài =100% có nghĩa là 800px mà ta tính ở trên
+   816px mới cân bằng nên cộng thêm 16px. Phải lấy giá trị tương đối
+   vì khi responsive nghĩa là kéo ra thu nhỏ nó sẽ cách một khoảng nhất
+   định so với lề chứ không bị mất chữ hay ảnh
+   margin-left: -8px;
+   margin-right: -8px;*/
+   margin-top: 32px;
+    overflow: hidden;
+    text-align: left;
+}
+/*.ticket-place .img-place{
+    width: calc(100%/3);
+}*/
+.ticket-place .ticket-img {
+    width:100%;
+    padding:0 8px;
+}
+.ticket-place .ticket-img:hover{
+    opacity: 0.6;
+}
+.interface-ticket {
+    margin-left: 8px;
+    padding-left: 16px;
+    background-color: #fff;
+    color: #000;
+    height: 200px;
+    margin-top: -3px;
+    margin-right: 8px;
+}
+.ticket-place .place {
+    padding-top: 16px;
+    font-weight: 300;
+    font-size:20px;
+}
+.ticket-place .time{
+    opacity: 0.6;
+    padding: 16px 0;
+}
+.ticket-place .ticket-buy{
+    background-color: #000;
+    display:inline-block;
+    color:#fff;
+    margin-top: 12px;
+    padding: 12px 20px;
+    border: none;
+}
+.ticket-place .ticket-buy:hover{
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+/*Contact khi chưa dùng row và column
+.content-section .contact{
+    margin-top: 32px;
+    margin-bottom: 100px;
+   
+}
+.content-section .contact-description {
+    float: left;
+    text-align: left;
+    width: 50%;
+    
+}
+.contact-description i[class*="ti-"] {
+    Chỗ này không dùng margin-right bởi vì đôi khi
+    icon có độ dài khác nhau sẽ là cho các chữ theo
+    sau nó thụt ra thụt vào ko bằng nhau. Cố định
+    width để đảm bảo độ rộng của width là như nhau
+    width: 30px;
+    display: inline-block;
+}*/ 
+/*
+.contact-description p{
+    line-height: 1.5;
+   
+}
+.contact .contact-form{
+    text-align: left;
+    width: 50%;
+    float: right;
+   
+}
+.contact-form .contact-name{
+    width: 40%;
+    padding: 8x;
+}
+.contact-form .contact-email{
+    width: 40%;
+    float: right;
+    padding: 8x;
+}
+.contact-form .contact-message {
+    width: 100%;
+    padding: 8x;
+}*/
+
+.contact{
+    text-align: left;
+    margin-bottom: 300px;
+    margin-top: 40px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.contact-info{
+    line-height: 1.5;
+}
+.contact-info i[class*="ti-"]{
+    width: 30px;
+    display: inline-block;
+    
+}
+.contact-info a{
+    color:#5200ee;
+    opacity:0.6;
+}
+.contact-info a:hover{
+    opacity:1;
+}
+.contact-form{
+    font-size: 15px;
+}
+.contact-form .form-control{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    /*outline: none;
+    Hiệu ứng này để tắt đường viền khi nhấp chuột vào 
+    để nhập*/
+}
+.contact-name{
+    width: 46%;
+    margin-right: 26px;
+}
+.contact-email {
+    width: 46%;
+    
+}
+.contact-form .contact-message{
+    margin: 12px 0;
+    width: 98%;
+    float: left;
+}
+
+.contact-submit{
+    float: right;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 20px;
+    font-weight: 600;
+    border: none;
+}
+.contact-submit:hover{
+    cursor: pointer;
+    background-color: #ccc;
+    color: #000;
+}
+.map-section img{
+    width: 100%;
+    filter: grayscale(50%);
+}
+
+#footer {
+    text-align: center;
+    padding: 40px 16px;
+    color: #009688;
+    font-size: 18px;
+}
+#footer .social-list a{
+    text-decoration: none;
+    color: #009688;
+}
+#footer .social-list a:hover{
+    opacity: 0.6;
+}
+#footer .copyright {
+    margin-top: 20px;
+}
+#footer .copyright a{
+    color: #009688;
+}
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    align-items: center; /* này là căn theo chiều dọc*/
+    justify-content: center;/* này là căn theo chiều ngang*/ 
+    display: none;   
+}
+/* Chú ý: nếu .model và .open ko có dấu cách có nghĩa là 
+class vừa có tên là modal vừa có tên open sẽ được áp 
+dụng thuộc tính CSS*/
+.modal.open{
+    display: flex;
+    /* Chú ý: nếu như để display: flex; mà khi ấn vào nút
+Buy Tickets vẫn không hiển thị modal thì thêm display:display: display:
+ flex!important ; vào*/
+}
+.modal-container{
+    background-color: #fff;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    position: relative;
+    animation: modalFadeIn ease .5s;
+}
+.modal-header{
+    background-color: #009688;
+    height: 129px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-heading-icon{
+    margin-right:16px;
+}
+.modal-close{
+    position: absolute;
+    right :0;
+    top:0;
+    padding: 12px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 1;
+}
+.modal-close:hover{
+    opacity:0.6;
+    background-color: #ccc;
+}
+.modal-label{
+    display: block;
+}
+
+#buy-ticket{
+    display: block;
+    background-color: #009688;
+    width: 100%;
+    padding: 12px 0;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 900;
+    color: #fff;
+    border: none;
+}
+#buy-ticket:hover{
+    opacity: 0.6;
+}
+.modal-body{
+    padding: 20px 20px;
+}
+.modal-input {
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 12px;
+    margin-bottom: 24px;
+    margin-top: 12px;
+}
+.modal-footer{
+    float: right;
+    margin: 20px 20px;
+    padding-bottom: 20px;
+}
+.modal-footer a{
+    color: #2196F3;
+}
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
